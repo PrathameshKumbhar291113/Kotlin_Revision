@@ -7,8 +7,16 @@ fun main() {
         println(it)
     }*/
 
-    println(removeWhiteSpacesFromString("   123   abc   456   x y z "))
+//    println(removeWhiteSpacesFromString("   123   abc   456   x y z "))
 //    println(replaceWhiteSpacesFromStringWithCharacter("   123   abc   456   x y z "))
+
+    val array = arrayOf(1,1,2,4,2,3,8,8,8,7,5,5,6,6)
+    array.sort()
+    val newArray = removeDuplicateElementsInArray(array)
+
+    for (i in newArray){
+        print(i)
+    }
 
 }
 
@@ -54,4 +62,15 @@ fun replaceWhiteSpacesFromStringWithCharacter(str : String): String{
         }
     }
     return newStr
+}
+
+fun removeDuplicateElementsInArray(arr : Array<Int>): Array<Int>{
+    var newArray = emptyArray<Int>()
+
+    for (i in arr.indices) {
+        if (i == arr.size - 1 || arr[i] != arr[i + 1]) {
+            newArray += arr[i]
+        }
+    }
+    return newArray
 }
